@@ -9,10 +9,28 @@
         android:id="@+id/imgsplashLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/splash_image11" />
+        android:src="@drawable/imgplant" />
+    <TextView
+        android:id="@+id/imgsplashName1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="325dp"
+        android:text="FARM"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="#277F20"/>
+    <TextView
+        android:id="@+id/imgsplashName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="165dp"
+        android:layout_marginTop="350dp"
+        android:text="ASSIST"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="#277F20"/>
 
 </RelativeLayout>
