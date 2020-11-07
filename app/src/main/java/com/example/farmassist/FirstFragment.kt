@@ -1,5 +1,6 @@
 package com.example.farmassist
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.fragment_first.*
+
 class FirstFragment : Fragment() {
 
     override fun onCreateView(
@@ -23,5 +26,10 @@ class FirstFragment : Fragment() {
         view.findViewById<Button>(R.id.button_first).setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+
+        button_second.setOnClickListener {
+            val intent = Intent(this,FirstFragment::class.java)
+            startActivity(intent)
+            // Do
     }
-}
+}}
