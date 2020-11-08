@@ -27,6 +27,10 @@ class MainActivity : AppCompatActivity() {
             val intent=Intent(this,SecondActivity::class.java)
             startActivity(intent)
         }
+        button_third.setOnClickListener {
+            val intent=Intent(this,PlantActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
