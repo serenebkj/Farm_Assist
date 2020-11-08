@@ -2,12 +2,12 @@ package com.example.farmassist
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -24,13 +24,27 @@ class MainActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
         button_second.setOnClickListener {
-            val intent=Intent(this,SecondActivity::class.java)
+            val intent=Intent(this, SecondActivity::class.java)
             startActivity(intent)
         }
-        button_third.setOnClickListener {
-            val intent=Intent(this,PlantActivity::class.java)
-            startActivity(intent)
-        }
+        val database: FirebaseDatabase = FirebaseDatabase.getInstance()
+        val myRef: DatabaseReference = database.getReference("moisture")
+
+
+        myRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                val value = dataSnapshot.getValue(String::class.java)!!
+                textview_moistval.setText(value)
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Failed to read value
+
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
