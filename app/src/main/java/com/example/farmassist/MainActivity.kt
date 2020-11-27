@@ -27,6 +27,10 @@ class MainActivity : AppCompatActivity() {
             val intent=Intent(this, SecondActivity::class.java)
             startActivity(intent)
         }
+        button_third.setOnClickListener {
+            val intent=Intent(this,PlantActivity::class.java)
+            startActivity(intent)
+        }
         val database: FirebaseDatabase = FirebaseDatabase.getInstance()
         val myRef: DatabaseReference = database.getReference("moisture")
 
