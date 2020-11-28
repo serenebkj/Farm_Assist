@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     //val button_second:Button=findViewById(R.id.button_second)
-
+    var value:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -39,8 +39,11 @@ class MainActivity : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                val value = dataSnapshot.getValue(String::class.java)!!
-                textview_moistval.setText(value)
+                if (value!=null){
+                    value = dataSnapshot.getValue(String::class.java)!!
+                    var mVal=value.toString()
+                    textview_moistval.setText(mVal!!)
+                }
 
             }
 

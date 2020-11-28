@@ -53,6 +53,7 @@
             android:background="@drawable/rounded_rect1"
             android:elevation="10dp"
             android:paddingTop="3dp"
+            android:text="0"
             android:textAlignment="center"
             android:textColor="#002966"
             android:textSize="20dp"
