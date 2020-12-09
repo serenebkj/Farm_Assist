@@ -13,14 +13,15 @@ class PlantActivity : AppCompatActivity() {
         buttonOn.setOnClickListener {
             val database = FirebaseDatabase.getInstance()
             val myRef = database.getReference().child("FarmAssist").child("motor")
+                //
 
-            myRef.setValue(1)
+            myRef.setValue("1")
         }
         buttonOff.setOnClickListener {
             val database = FirebaseDatabase.getInstance()
             val myRef = database.getReference().child("FarmAssist").child("motor")
 
-            myRef.setValue(0)
+            myRef.setValue("0")
         }
     }
 }

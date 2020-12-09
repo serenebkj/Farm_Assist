@@ -11,27 +11,26 @@
         android:id="@+id/txtPlantView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Motor control"
+        android:text="View each by the arrows"
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
         android:layout_marginTop="100dp"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonOn"
-        android:layout_width="60dp"
-        android:layout_height="40dp"
-        android:text="ON"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/fastforward"
         android:layout_below="@id/txtPlantView"
-        android:layout_marginTop="225dp"
-        android:layout_marginLeft="60dp"
-        android:background="@drawable/rounded_rect2"/>
-    <Button
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="60dp" />
+    <ImageButton
         android:id="@+id/buttonOff"
         android:layout_width="60dp"
         android:layout_height="40dp"
-        android:text="OFF"
+        android:src="@drawable/two_left_arrows"
+
         android:layout_below="@id/txtPlantView"
-        android:layout_marginTop="225dp"
-        android:layout_marginLeft="260dp"
-        android:background="@drawable/rounded_rect2"/>
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="260dp" />
 </RelativeLayout>

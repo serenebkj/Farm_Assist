@@ -32,19 +32,18 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         val database: FirebaseDatabase = FirebaseDatabase.getInstance()
-        val myRef: DatabaseReference = database.getReference("moisture")
+        val myRef: DatabaseReference = database.getReference()
+        val moistVal: DatabaseReference= myRef.child("FarmAssist").child("moisture")
 
 
-        myRef.addValueEventListener(object : ValueEventListener {
+        moistVal.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                if (value!=null){
-                    value = dataSnapshot.getValue(String::class.java)!!
-                    var mVal=value.toString()
-                    textview_moistval.setText(mVal!!)
-                }
 
+                var value = dataSnapshot.getValue(String::class.java)!!
+                var mVal=value.toString()
+                textview_moistval.setText(mVal!!)
             }
 
             override fun onCancelled(error: DatabaseError) {
