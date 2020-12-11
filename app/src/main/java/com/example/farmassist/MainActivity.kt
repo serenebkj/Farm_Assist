@@ -31,6 +31,10 @@ class MainActivity : AppCompatActivity() {
             val intent=Intent(this,PlantActivity::class.java)
             startActivity(intent)
         }
+        textview_2nd.setOnClickListener {
+            val intent=Intent(this,weather::class.java)
+            startActivity(intent)
+        }
         val database: FirebaseDatabase = FirebaseDatabase.getInstance()
         val myRef: DatabaseReference = database.getReference()
         val moistVal: DatabaseReference= myRef.child("FarmAssist").child("moisture")
