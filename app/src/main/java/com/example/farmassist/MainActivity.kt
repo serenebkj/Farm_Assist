@@ -1,9 +1,10 @@
 package com.example.farmassist
-
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -45,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
 
-                var value = dataSnapshot.getValue(String::class.java)!!
+                var value = dataSnapshot.getValue(Int::class.java)!!
                 var mVal=value.toString()
                 textview_moistval.setText(mVal!!)
             }
@@ -55,22 +56,43 @@ class MainActivity : AppCompatActivity() {
 
             }
         })
+        if ( value.toString() <= 10.toString())
+        { showAlertDialog() }
+        if ( value.toString() >= 50.toString())
+        { showAlertDialog2() }
     }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
+    private fun showAlertDialog() {
+        val alertDialog: AlertDialog.Builder = AlertDialog.Builder(this@MainActivity)
+        alertDialog.setTitle("Water Alert")
+        alertDialog.setMessage("Your plant need water")
+        alertDialog.setPositiveButton(
+            "yes"
+        ) { _, _ ->
+            Toast.makeText(this@MainActivity, "Alert dialog closed.", Toast.LENGTH_LONG).show()
         }
+        alertDialog.setNegativeButton(
+            "No"
+        ) { _, _ -> }
+        val alert: AlertDialog = alertDialog.create()
+        alert.setCanceledOnTouchOutside(false)
+        alert.show()
+    }
+    private fun showAlertDialog2() {
+        val alertDialog: AlertDialog.Builder = AlertDialog.Builder(this@MainActivity)
+        alertDialog.setTitle("Water Alert")
+        alertDialog.setMessage("Excess water detected")
+        alertDialog.setPositiveButton(
+            "yes"
+        ) { _, _ ->
+            Toast.makeText(this@MainActivity, "Alert dialog closed.", Toast.LENGTH_LONG).show()
+        }
+        alertDialog.setNegativeButton(
+            "No"
+        ) { _, _ -> }
+        val alert: AlertDialog = alertDialog.create()
+        alert.setCanceledOnTouchOutside(false)
+        alert.show()
+    }
     }
 
-}
+

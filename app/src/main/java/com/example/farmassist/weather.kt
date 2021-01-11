@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class weather : AppCompatActivity() {
-    val CITY: String = "delhi,in"
+    val CITY: String = "kochi,in"
     val API: String = "2b8f2e3cc73cc3ab5762223806ca0470"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
