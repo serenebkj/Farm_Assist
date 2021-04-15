@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_plant.*
 import android.net.Uri;
+import android.webkit.WebView
 import android.widget.MediaController;
 import android.widget.VideoView;
 
 class PlantActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        val video_url ="http://192.168.43.88:8081/"
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plant)
 
@@ -26,7 +28,11 @@ class PlantActivity : AppCompatActivity() {
 
             myRef.setValue("0")
         }
-        var vidPlant:VideoView=findViewById(R.id.plantVideo)
-        
+        val video = findViewById<VideoView>(R.id.plantVideo) as WebView
+        video.loadUrl(video_url);
+        val uri = Uri.parse(video_url)
+
+
+
     }
 }
