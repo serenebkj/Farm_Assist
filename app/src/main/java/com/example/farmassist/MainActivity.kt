@@ -38,6 +38,25 @@ class MainActivity : AppCompatActivity() {
         }
         val database: FirebaseDatabase = FirebaseDatabase.getInstance()
         val myRef: DatabaseReference = database.getReference()
+        val prediction: DatabaseReference= myRef.child("FarmAssist").child("prediction")
+
+
+        prediction.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+
+                var value2 = dataSnapshot.getValue(String::class.java)
+                var pVal=value2.toString()
+                textview_prediction.setText(pVal!!)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Failed to read value
+
+            }
+        })
+
         val moistVal: DatabaseReference= myRef.child("FarmAssist").child("moisture")
 
 

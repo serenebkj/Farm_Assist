@@ -101,6 +101,41 @@
             android:background="@drawable/rounded_rect4"
             android:layout_below="@+id/textview_2nd"
             android:layout_centerHorizontal="true" />
+        <TextView
+            android:id="@+id/textview_3rd"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rounded_rect1"
+            android:elevation="10dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="8dp"
+            android:text="Disease monitor"
+            android:textAlignment="center"
+            android:textColor="#002966"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/button_third"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/textview_prediction"
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:layout_below="@+id/textview_3rd"
+            android:layout_marginLeft="115dp"
+            android:layout_marginTop="-48dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rounded_rect1"
+            android:elevation="10dp"
+            android:paddingTop="3dp"
+            android:textAlignment="center"
+            android:textColor="#54436B"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
     </RelativeLayout>
 
 
