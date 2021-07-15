@@ -126,7 +126,7 @@
             android:layout_height="75dp"
             android:layout_below="@+id/textview_3rd"
             android:layout_marginLeft="115dp"
-            android:layout_marginTop="-48dp"
+            android:layout_marginTop="-47dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/rounded_rect1"
             android:elevation="10dp"
